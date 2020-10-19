@@ -39,4 +39,10 @@ for filename in os.listdir('./Photo'):
         # run the inference
         prediction = model.predict(data)
         hotdog_percent = prediction.item(0) * 100
-        print(f'file name: {filename} Percent Hotdog: {hotdog_percent}')
+        print(f'file name: {filename} Percent Hot Dog: {hotdog_percent}')
+        if hotdog_percent > 90:
+            print(f'File: {filename} is a Hot Dog')
+        else:
+            print(f'File: {filename} is not a Hot Dog')
+    else:
+        print('JPG files only please')
